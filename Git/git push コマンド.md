@@ -1,6 +1,6 @@
 # 【Git】git push コマンド
 
-Gitのプッシュに関するコマンドをまとめてみました。
+Git のプッシュに関するコマンドをまとめてみました。
 git push コマンドはローカルリポジトリからリモートリポジトリへ反映させるコマンドです。
 基本的にリモートにある同名のブランチに push されます。競合が発生するような場合は、push が拒否されます。
 
@@ -57,9 +57,14 @@ git push -u <リモート名> <ブランチ名>
 </div>
 ローカルブランチをリモートブランチに反映すると同時に、追跡関係を設定する。<br>
 以降のpush操作でブランチ名を指定不要になり、効率的・操作の簡素化が可能。
-
-<div style="height: 12px;"><span style="margin-left: 8px; padding: 6px 10px; background:#FBB161 ; color: #ffffff; font-weight: bold; border-radius: 5px;">☀︎プルリクエスト☀︎</span></div>
-<div style="border: 2px solid#FBB161 ; padding: 25px 12px 10px; font-size: 1em; border-radius: 5px;">プルリクは自分の行った変更をリポジトリに取り込んでもらうために行う機能。<br>
+<br>
+<br>
+<br>
+<div style="height: 12px;"><span style="margin-left: 8px; padding: 6px 10px; background:#FBB161 ; color: #ffffff; font-weight: bold; border-radius: 5px;">
+☀︎プルリクエスト☀︎
+</span></div>
+<div style="border: 2px solid#FBB161 ; padding: 25px 12px 10px; font-size: 1em; border-radius: 5px;">
+プルリクは自分の行った変更をリポジトリに取り込んでもらうために行う機能。<br>
 レビューが返ってきたらmergeをする。<br>
 「git push <リモート名> <リクエストを出すブランチ名>」
 </div>

@@ -4,19 +4,15 @@
 
 **ディレクトリ・トラバーサル攻撃**とは、  
 外部からのパラメータをファイル名として直接指定している Web アプリケーションで、  
-攻撃者が<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">相対パスを使ってファイル名を指定し、非公開ファイルへアクセスする</span>攻撃手法。
-
-<br>
+攻撃者が相対パスを使ってファイル名を指定し、非公開ファイルへアクセスする攻撃手法。
 
 ###### 発生しうる脅威
 
-- <span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">重要情報の漏洩</span>
+- 重要情報の漏洩
   サーバーに格納されている重要な情報が盗まれる。企業の信頼を大きく損なうことにもつながる。
 
 - サーバー内ファイルの改ざん、削除  
   ファイルやプログラムのソースコードの書き換え、作成、削除などをされ、サービスの信頼性が損なわれる。
-
-<br>
 
 ```php
 $file = '/var/app/files/' . $data;
@@ -29,7 +25,7 @@ $file = '/var/app/files/' . ../../../etc/passwd;
 
 # 原因
 
-ユーザーからの入力を<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">そのままファイル名に指定する</span>実装。
+ユーザーからの入力をそのままファイル名に指定する実装。
 
 - 任意のディレクトリ名やファイル名を指定できる状態になっている。
 - サーバー内にあるファイルへのアクセス権限を正しく管理していない。
@@ -39,17 +35,16 @@ $file = '/var/app/files/' . ../../../etc/passwd;
 
 ### 根本的対策
 
-###### １.<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">ファイル名を直接指定する実装自体を避ける</span>
+###### １.ファイル名を直接指定する実装自体を避ける
 
 仕様や設計から見直す。
 
-###### ２.固定のディレクトリを指定&ファイル名にディレクトリ名を含まないように実装する<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">(basename 関数)</span>
+###### ２.固定のディレクトリを指定&ファイル名にディレクトリ名を含まないように実装する(basename 関数)
 
 ```php
 $dirname = '/var/app/files/';
 $filename = '$_GET['filename']';
 //ファイルを開く処理
-
 fopen($filename);
 ↓
 fopen($dirname.basename($filename), ’rb’);
@@ -63,7 +58,7 @@ fopen($dirname.basename($filename), ’rb’);
 
 ###### ３.ファイルのアクセス権限を適切に設定する
 
-Web サーバー内のファイルやアプリケーション、ユーザーに、<span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">必要最低限の権限のみ付与</span>する。  
+Web サーバー内のファイルやアプリケーション、ユーザーに、必要最低限の権限のみ付与する。  
 そのため攻撃者が不正のリクエストを送っても、その権限の範囲を超えるアクセスが拒否されたり、被害を最小限に抑えることができる。
 
 ###### ４.ファイル名のチェックをする
@@ -98,15 +93,15 @@ Web サーバー内のファイルやアプリケーション、ユーザーに�
 
 basename()は、引数のパスからファイル名だけを返してくれる PHP の関数。
 
-### 2.バリデーション処理をする(<span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">validate 関数</span>)
+### 2.バリデーション処理をする(validate 関数)
 
 外部からファイル名を入力されるところに
 
 ```php
 public function download (Request $request) {
-    $request->validate([
-        'filename' => ['required', 'regex:/^[a-zA-Z0-9_\-\.]+$/']
-    ]);
+  $request->validate([
+  'filename' => ['required', 'regex:/^[a-zA-Z0-9_\-\.]+$/']
+  ]);
 }
 ```
 
@@ -122,7 +117,7 @@ public function download (Request $request) {
 
 ### 参考にしたサイト
 
-- https://cyber-insurance.jp/column/1385/#%E7%B5%B6%E5%AF%BE%E3%83%91%E3%82%B9%E3%81%A8%E7%9B%B8%E5%AF%BE%E3%83%91%E3%82%B9%E3%81%AE%E9%81%95%E3%81%8 https://www.gmo.jp/security/cybersecurity/cyberattack/blog/directory-traversal-attacks/
+- https://cyber-insurance.jp/column/1385/#%E7%B5%B6%E5%AF%BE%E3%83%91%E3%82%B9%E3%81%A8%E7%9B%B8%E5%AF%BE%E3%83%91%E3%82%B9%E3%81%AE%E9%81%95%E3%81%8
 - https://hwdream.com/directory_traversal_attacks/
 - https://www.ipa.go.jp/security/vuln/appgoat/ug65p900000198gm-att/000077212.pdf
 - https://qiita.com/tani35web1/items/bae93769d6c30b9c5bc3.

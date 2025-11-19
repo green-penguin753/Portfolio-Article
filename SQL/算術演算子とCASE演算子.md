@@ -25,20 +25,18 @@
 
 CASE 演算子は、  
 列の値や条件式を計算し、その結果によって値を変換する。  
-<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">SQL での条件分岐</span>ができる。
+SQL での条件分岐ができる。
 
 ##### 単純 CASE 式
 
-<div style="background: #f5f5f5;  border-radius: 5px; padding: 10px; margin: 10px;">
-<p style="margin: 0;">
-CASE  列名<br> 
- WHEN 値1 THEN 値1のときに返す値<br> 
-（WHEN 値2 THEN 値2のときに返す値)<br> 
- •••<br> 
-（ELSE デフォルト値)<br>  
+```sql
+CASE  列名
+ WHEN 値1 THEN 値1のときに返す値
+（WHEN 値2 THEN 値2のときに返す値)
+ •••
+（ELSE デフォルト値)
 END
-</p>
-</div>
+```
 
 ```SQL
 SELECT  gender,
@@ -55,16 +53,14 @@ FROM customers;
 
 ##### 検索 CASE 式
 
-<div style="background: #f5f5f5;  border-radius: 5px; padding: 10px; margin: 10px;">
-<p style="margin: 0;">
-CASE  <br> 
- WHEN 条件1 THEN 条件1のときに返す値<br> 
-（WHEN 条件2 THEN 条件2のときに返す値)<br> 
- •••<br> 
-（ELSE デフォルト値)<br>  
+```sql
+CASE
+ WHEN 条件1 THEN 条件1のときに返す値
+（WHEN 条件2 THEN 条件2のときに返す値)
+ •••
+（ELSE デフォルト値)
 END
-</p>
-</div>
+```
 
 ```SQL
 SELECT name,

@@ -4,11 +4,7 @@
 
 ### LENGTH()・・・文字列の長さ
 
-<div style="background: #f5f5f5;  border-radius: 5px; padding: 10px; margin: 10px;">
-<p style="margin: 0;">
-LENGTH(列名)
-</p>
-</div>
+`LENGTH(列名)`
 
 ```SQL
 SELECT  LENGTH(email)
@@ -22,11 +18,7 @@ FROM customers;
 
 - CHAR 型の列の空白を取り除くときに使う。
 
-<div style="background: #f5f5f5;  border-radius: 5px; padding: 10px; margin: 10px;">
-<p style="margin: 0;">
-TRIM(列名)
-</p>
-</div>
+`TRIM(列名)`
 
 ```SQL
 SELECT  TRIM(name)
@@ -35,20 +27,15 @@ FROM customers;
 
 ☀︎ 文字列の左右から空白を取り除く。「 あいう 」→「あいう」
 
-<div style="height: 12px;"><span style="margin-left: 8px; padding: 6px 10px; background:#FBB161 ; color: #ffffff; font-weight: bold; border-radius: 5px;">☀︎空白を除去する関数☀︎</span></div>
-<div style="border: 2px solid#FBB161 ; padding: 25px 12px 10px; font-size: 1em; border-radius: 5px;">
+☀︎ 空白を除去する関数 ☀︎
+
 ・TRIM()・・・・左右から空白を除去<br>
 ・LTRIM() ・・・左側から空白を除去<br>
 ・RTRIM()・・・右側から空白を除去
-</div>
 
 ### REPLACE()・・・指定した文字を置換
 
-<div style="background: #f5f5f5;  border-radius: 5px; padding: 10px; margin: 10px;">
-<p style="margin: 0;">
-REPLACE(列名, '置換前', '置換後')
-</p>
-</div>
+`REPLACE(列名, '置換前', '置換後')`
 
 ```SQL
 UPDATE  items
@@ -59,11 +46,7 @@ SET item_name = REPLACE(item_name, 'abc', 'xyz');
 
 ### SUBSTRING()・・・文字列の一部を抽出する
 
-<div style="background: #f5f5f5;  border-radius: 5px; padding: 10px; margin: 10px;">
-<p style="margin: 0;">
-SUBSTRING(列名, 開始位置, 文字数)
-</p>
-</div>
+`SUBSTRING(列名, 開始位置, 文字数)`
 
 ```SQL
 SELECT SUBSTRING(item_name, 1, 5)
@@ -77,11 +60,7 @@ FROM  items;
 
 ### ROUND()・・・四捨五入
 
-<div style="background: #f5f5f5;  border-radius: 5px; padding: 10px; margin: 10px;">
-<p style="margin: 0;">
-ROUND(数値型の列名, 有効桁数)
-</p>
-</div>
+`ROUND(数値型の列名, 有効桁数)`
 
 ```SQL
 SELECT ROUND(price, -2)
@@ -92,11 +71,7 @@ FROM  items;
 
 ### TRUNC()・・・切り捨て
 
-<div style="background: #f5f5f5;  border-radius: 5px; padding: 10px; margin: 10px;">
-<p style="margin: 0;">
-TRUNC(数値型の列名, 有効桁数)
-</p>
-</div>
+`TRUNC(数値型の列名, 有効桁数)`
 
 ```SQL
 SELECT TRUNC(price, -2)
@@ -107,11 +82,7 @@ FROM  items;
 
 ### POWER()・・・べき乗を計算
 
-<div style="background: #f5f5f5;  border-radius: 5px; padding: 10px; margin: 10px;">
-<p style="margin: 0;">
-POWER(数値型の列名または数値, 何乗かを指定する数値)
-</p>
-</div>
+`POWER(数値型の列名または数値, 何乗かを指定する数値)`
 
 ```SQL
 SELECT POWER(2, 3);
@@ -138,11 +109,7 @@ VALUES  (3, ’John’, 20, CURRENT_DATE);
 
 - あるデータ型を別のデータ型に変換するための関数。
 
-<div style="background: #f5f5f5;  border-radius: 5px; padding: 10px; margin: 10px;">
-<p style="margin: 0;">
-CAST(変換したい値や列名 AS 変換後のデータ型)
-</p>
-</div>
+`CAST(変換したい値や列名 AS 変換後のデータ型)`
 
 ```SQL
 SELECT id, CAST(created_date AS CHAR)
@@ -155,14 +122,14 @@ FROM customers;
 
 SQL にはデータベースへの複数の命令をまとめて RDBMS に保存する機能がある。
 
-- <span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">**ストアドファンクション**</span>(ユーザー定義関数)
+- **ストアドファンクション**(ユーザー定義関数)
 
   - 必要な処理を自分で関数として作成して保存する。
   - 必ず戻り値を返す。
   - CREATE FUNCTION で定義、SELECT 文で呼び出し
   - SQL 内で複雑な計算や値の加工をしたいときに便利。
 
-- <span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">**ストアドプロシージャ**</span>
+- **ストアドプロシージャ**
   - 複数の SQL 処理をまとめて保存する。
   - 戻り値は返さない。
   - CREATE PROCEDURE で定義、CALL で呼び出し

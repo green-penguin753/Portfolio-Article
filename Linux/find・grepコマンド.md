@@ -4,7 +4,7 @@ Linux で検索に使うコマンドについてまとめました。
 
 # find コマンド
 
-###### <span style="background: linear-gradient(transparent 60%, #ffff00 60%);">ファイルがどこのディレクトリにあるか検索する</span>
+###### ファイルがどこのディレクトリにあるか検索する
 
 `find［検索ディレクトリ］［オプション］［条件式］［アクション］`
 
@@ -15,7 +15,7 @@ Linux で検索に使うコマンドについてまとめました。
 
 - **よく使うオプション**
 
-#### span style="background: linear-gradient（transparent 40%, #F9C1CF 100%);">検索の深さを制限する</span>
+#### 検索の深さを制限する
 
 - mindepth オプション・・・どの深さから探すか（最小）
 - maxdepth オプション・・・どこまでの深さまでで探すか（最大）
@@ -55,7 +55,7 @@ $ find . -type f
   - d：ディレクトリ
   - l：シンボリックファイル
 
-#### <span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">ファイルサイズから検索</span>
+#### ファイルサイズから検索
 
 -size オプション
 
@@ -70,7 +70,7 @@ $ find /etc -size +1G
   - M：メガバイト（MB）
   - G：ギガバイト（GB）
 
-#### <span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">日時から検索</span>
+#### 日時から検索
 
 - mtime オプション・・・最終更新日を基準にする
 - atime オプション・・・最終アクセス日を基準にする
@@ -84,7 +84,7 @@ $ find /etc -atime +30
 - 2 行目は、/etc ディレクトリ内で 30 日以上アクセスされていないファイルを探すと言う意味。
 - 最近更新されたファイルを確認したいときなどに使う。
 
-#### <span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">パーミッションから検索</span>
+#### パーミッションから検索
 
 -perm オプション
 
@@ -94,7 +94,7 @@ $ find /etc -perm 755
 
 - /etc ディレクトリ内で 755 のパーミッションを持つファイルを探すと言う意味。
 
-#### <span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">ユーザーやグループから検索</span>
+#### ユーザーやグループから検索
 
 -user / -group オプション
 
@@ -118,7 +118,7 @@ $ find /etc -user username
 
 # grep コマンド
 
-###### <span style="background: linear-gradient(transparent 60%, #ffff00 60%);">ファイル内容の文字列を検索する</span>
+###### ファイル内容の文字列を検索する
 
 ```bash
 $ grep -i "Error" logfile.txt
@@ -141,7 +141,7 @@ $ grep -i "Error" logfile.txt
 
 ### 参考にしたサイト
 
-- [https://linuc.spa-miz.com/2021/01/05/exhaust-find-command/]
-- [https://www.infra-manual.com/findcommand-details/]
-- [https://eng-entrance.com/linux-command-grep]
-- [https://blog.qbist.co.jp/?p=1919]
+- https://linuc.spa-miz.com/2021/01/05/exhaust-find-command/
+- https://www.infra-manual.com/findcommand-details/
+- https://eng-entrance.com/linux-command-grep
+- https://blog.qbist.co.jp/?p=1919

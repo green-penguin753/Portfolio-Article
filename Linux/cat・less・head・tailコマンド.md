@@ -4,10 +4,9 @@ Linux で使うファイルの内容を表示するコマンドについてま�
 
 # cat コマンド
 
-###### <span style="background: linear-gradient(transparent 60%, #ffff00 60%);">ファイルの内容を表示する</span>
+###### ファイルの内容を表示する
 
 ```bash
-
 $ cat work01
 ```
 
@@ -26,10 +25,9 @@ $ cat work01
 
 # less コマンド
 
-###### <span style="background: linear-gradient(transparent 60%, #ffff00 60%);">ファイルを閲覧する</span>
+###### ファイルを閲覧する
 
 ```bash
-
 $ less work01
 ```
 
@@ -41,16 +39,15 @@ $ less work01
   $ コマンド | less
 
 - **よく使うオプション**  
-  -N 行番号つけて表示する。<br>
-  -s 2 行以上の空行を 1 行の空行にして表示する。<br>
-  -p 指定した文字列にハイライトをかける。検索に便利。<br>
+  -N 行番号つけて表示する。
+  -s 2 行以上の空行を 1 行の空行にして表示する。
+  -p 指定した文字列にハイライトをかける。検索に便利。
 
 # head コマンド
 
-###### <span style="background: linear-gradient(transparent 60%, #ffff00 60%);">データの先頭のみ表示する</span>
+###### データの先頭のみ表示する
 
 ```bash
-
 $ head work01
 ```
 
@@ -60,15 +57,14 @@ $ head work01
 - オプションを指定しないときは、先頭 10 行を表示する。
 
 - **よく使うオプション**  
-  -c 出力する文字数を指定する。<br>
-  -n 出力する行数を指定する。<br>
+  -c 出力する文字数を指定する。
+  -n 出力する行数を指定する。
 
 # tail コマンド
 
-###### <span style="background: linear-gradient(transparent 60%, #ffff00 60%);">データの終わり部分のみ表示する</span>
+###### データの終わり部分のみ表示する
 
 ```bash
-
 $ tail work01
 ```
 
@@ -78,16 +74,17 @@ $ tail work01
 - オプションを指定しないときは、末尾 10 行を表示する。
 
 - **よく使うオプション**  
-  -f 指定されたファイルの末尾をリアルタイムで監視し、更新内容を表示する。<br>
-  ctrl+c で終了するまで実行し続ける。<br>
-  ログファイルの監視やデバッグ作業に使う。<br>
-  -c 出力する文字数を指定する。<br>
-  -n 出力する行数を指定する。<br>
+  -f 指定されたファイルの末尾をリアルタイムで監視し、更新内容を表示する。
+  ctrl+c で終了するまで実行し続ける。
+  ログファイルの監視やデバッグ作業に使う。
+  -c 出力する文字数を指定する。
+  -n 出力する行数を指定する。
 
 ---
 
 ### 参考にしたサイト
 
-- [https://eng-entrance.com/linux_command_cat]
-- [https://linuc.spa-miz.com/2021/02/03/extremes-the-cat-command-to-display-file-contents/]
-- [https://qiita.com/ine1127/items/64b5b6cf52471c3fe59c] -[https://www.kakiro-web.com/tail-command/]
+- https://eng-entrance.com/linux_command_cat
+- https://linuc.spa-miz.com/2021/02/03/extremes-the-cat-command-to-display-file-contents/
+- https://qiita.com/ine1127/items/64b5b6cf52471c3fe59c
+- https://www.kakiro-web.com/tail-command/

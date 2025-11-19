@@ -6,7 +6,7 @@ ORDER BY 句は、取得したデータを指定した列名で並べ替える�
 
 # 集合演算子
 
-複数のテーブルの<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">SELECT 文の検索結果を 1 つにまとめる</span>。
+複数のテーブルの SELECT 文の検索結果を 1 つにまとめる。
 
 - テーブル同士の検索結果の列数＆データ型を完全に一致させておくこと。
 - 「(ALL)」をつけることで重複した行も含めて取得できる。  
@@ -14,78 +14,69 @@ ORDER BY 句は、取得したデータを指定した列名で並べ替える�
 
 ### UNION・・・和集合
 
-2 つの検索結果を<span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">足し合わせた行</span>から重複を除いた集合。
+2 つの検索結果を足し合わせた行から重複を除いた集合。
 
-<div style="background: #f5f5f5;  border-radius: 5px; padding: 10px; margin: 10px;">
-<p style="margin: 0;">
-SELECT  列名1, 列名2<br>
- FROM  テーブル名1<br>
- UNION<br>
-SELECT  列名1, 列名2<br>
- FROM  テーブル名2;<br>
-</p>
-</div>
+```sql
+SELECT  列名1, 列名2
+ FROM  テーブル名1
+ UNION
+SELECT  列名1, 列名2
+ FROM  テーブル名2;
+```
 
 - 項目の一覧を抽出するときなどに使う。
 
 ### EXCEPT・・・差集合
 
-1 つ目の検索結果から、2 つ目の検索結果のデータを<span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">差し引いた行</span>から重複を除いた集合。
+1 つ目の検索結果から、2 つ目の検索結果のデータを差し引いた行から重複を除いた集合。
 
-<div style="background: #f5f5f5;  border-radius: 5px; padding: 10px; margin: 10px;">
-<p style="margin: 0;">
-SELECT  列名1, 列名2<br>
- FROM  テーブル名1<br>
- EXCEPT<br>
-SELECT  列名1, 列名2<br>
- FROM  テーブル名2;<br>
-</p>
-</div>
+```sql
+SELECT  列名1, 列名2
+ FROM  テーブル名1
+ EXCEPT
+SELECT  列名1, 列名2
+ FROM  テーブル名2;
+```
 
 - 今月の新規顧客データを抽出するときなどに使う。
 
 ### INTERSECT・・・積集合
 
-2 つの SELECT 文の検索結果に<span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">共通して含まれる行</span>から重複を除いた集合。
+2 つの SELECT 文の検索結果に共通して含まれる行から重複を除いた集合。
 
-<div style="background: #f5f5f5;  border-radius: 5px; padding: 10px; margin: 10px;">
-<p style="margin: 0;">
-SELECT  列名1, 列名2<br>
- FROM  テーブル名1<br>
- INTERSECT<br>
-SELECT  列名1, 列名2<br>
- FROM  テーブル名2;<br>
-</p>
-</div>
+```sql
+SELECT  列名1, 列名2
+ FROM  テーブル名1
+ INTERSECT
+SELECT  列名1, 列名2
+ FROM  テーブル名2;
+```
+
 - 前月と今月の両方に存在する顧客データを抽出するときなどに使う。
 
 # DISTINCT 句
 
-SELECT 文の<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">検索結果から重複するデータを除く。</span>
+SELECT 文の検索結果から重複するデータを除く。
 
-<div style="background: #f5f5f5;  border-radius: 5px; padding: 10px; margin: 10px;">
-<p style="margin: 0;">
-SELECT DISTINCT 列名<br>
+```sql
+SELECT DISTINCT 列名
  FROM  テーブル名;
-</p>
-</div>
+```
 
 - 複数の列名を指定したときは、指定した列の組み合わせが重複しない行だけが抽出される。
 - COUNT 関数と組み合わせて`SELECT COUNT(DISTINCT 列名) ` とすると、重複しない値の件数を数えられる。
 
 # ORDER BY 句
 
-SELECT 文から重複を除いた<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">検索結果のデータを並び替える。</span>
+SELECT 文から重複を除いた検索結果のデータを並び替える。
 
-<div style="background: #f5f5f5;  border-radius: 5px; padding: 10px; margin: 10px;">
-<p style="margin: 0;">
-SELECT DISTINCT 列名<br>
- FROM  テーブル名<br>
+```sql
+SELECT DISTINCT 列名
+ FROM  テーブル名
  ORDER BY 列名 並べ方;
-</p>
-</div>
+```
 
-- 並べ方は<span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">昇順なら「ASC」、降順なら「DESC」</span>と指定する。
+- 並べ方は昇順なら「ASC」、降順なら「DESC」と指定する。
 - 複数の列名を指定したときは、  
   最初の列で並び替えが優先され、同じ値が複数あれば次の列で並び替える。
 - 列ごとに並べ方を個別に指定できる。

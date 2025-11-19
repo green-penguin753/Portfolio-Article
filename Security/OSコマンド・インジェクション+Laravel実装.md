@@ -3,11 +3,11 @@
 # 概要
 
 脆弱性のある Web アプリケーションの入力領域(入力フォーム等)に、  
-攻撃者が<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">悪意のある OS コマンドを紛れ込ませ、Web サーバー上で不正に実行する</span>攻撃手法。
+攻撃者が悪意のある OS コマンドを紛れ込ませ、Web サーバー上で不正に実行する攻撃手法。
 
 ###### 発生しうる脅威
 
-- <span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">重要情報の漏洩</span>  
+- 重要情報の漏洩  
   サーバーに格納されている重要な情報が盗まれる。企業の信頼を大きく損なうことにもつながる。
 
 - ファイルの改ざん  
@@ -18,7 +18,7 @@
 
 - 不正なプログラム(マルウェア)への感染  
   ウイルスの感染やバックドア、ランサムウェアなどにつながる。
-- <span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">攻撃の踏み台にされる</span>  
+- 攻撃の踏み台にされる
   サーバー自体を乗っ取られ、他サイトへ大量のリクエストを送信するなど、さまざまな攻撃に悪用される。
 
 <br>
@@ -36,7 +36,7 @@
 
 # 原因
 
-ユーザーからの入力を<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">そのまま OS コマンドに受け渡す</span>実装。
+ユーザーからの入力をそのまま OS コマンドに受け渡す実装。
 
 - 外部プログラムを呼び出し可能な関数を使っている。
 - ユーザーが入力した内容をチェックしていない。
@@ -45,7 +45,7 @@
 
 ### 根本的対策
 
-###### １.<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">OS コマンド(シェル)を実行する機能を持つ関数の利用を避ける</span>
+###### １.OS コマンド(シェル)を実行する機能を持つ関数の利用を避ける
 
 そもそも関数が OS コマンドを直接実行する機能を持っていなければ、攻撃は成立しない。
 
@@ -58,11 +58,11 @@ exec()ではなく OS コマンドを実行しない rename()など代替の関�
 
 ###### ２.その引数を構成する全ての変数に対してチェックを行い、あらかじめ許可した処理のみ実行する
 
-- <span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">**バリデーション処理**</span>を使う  
+- **バリデーション処理**を使う  
   ホワイトリスト方式とはその引数に許可する文字の組み合わせを決めておき、それ以外は許可しない方式。  
   数字以外を入力することのない引数であれば、「数字のみからなる文字列であること」をチェックする。
 
-- <span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">**エスケープ処理**</span>をする  
+- **エスケープ処理**をする  
   escapeshellarg()などを使って特別な意味を持つ文字を変換し、無害化(サニタイジング)する。
 
 ###### ３.WAF(Web Application Firewall)の導入
@@ -83,7 +83,6 @@ rename($oldFileName , $newFileName);
 
 // ２.エスケープ処理を使う方法
 exec("rename " . escapeshellarg($oldFileName). " " . escapeshellarg($newFileName));
-
 ```
 
 # Laravel での実装例
@@ -104,7 +103,7 @@ Storage::move($oldFileName , $newFileName);
 
 どうしても OS コマンドを実行する機能を持つ関数を利用したいときは、
 
-- **バリデーション処理(<span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">validate 関数</span>)**
+- **バリデーション処理(validate 関数)**
 
 PostController.php ファイルで
 
@@ -121,7 +120,7 @@ public function store (Request $request) {
 指定する値以外はエラーとなり通過できないようにする。  
  required 属性で必須入力として、空欄であってもエラーとなる。
 
-- **エスケープ処理(<span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">escapeshellarg 関数</span>)**
+- **エスケープ処理(escapeshellarg 関数)**
 
 escapeshellarg()は、  
 引数の特殊文字などを安全な文字列として自動的に変換してくれる PHP の関数。

@@ -4,7 +4,7 @@ Linux で実行中のプロセス(アプリケーション)に使うコマンド
 
 # ps コマンド
 
-###### <span style="background: linear-gradient(transparent 60%, #ffff00 60%);">動作しているプロセスを確認する</span>
+###### 動作しているプロセスを確認する
 
 ```bash
 
@@ -29,7 +29,7 @@ $ ps
 
 # top コマンド
 
-###### <span style="background: linear-gradient(transparent 60%, #ffff00 60%);">プロセスの状態を確認する</span>
+###### プロセスの状態を確認する
 
 ```bash
 
@@ -53,7 +53,7 @@ $ top
 
 # kill コマンド
 
-###### <span style="background: linear-gradient(transparent 60%, #ffff00 60%);">シグナルを送信してプロセスを制御する</span>
+###### シグナルを送信してプロセスを制御する
 
 ```bash
 
@@ -69,9 +69,8 @@ $ kill 22385
 - **よく使うオプション**  
   -l 利用できるシグナルの一覧を表示する<br> -シグナル番号
 
-<div style="height: 12px;"><span style="margin-left: 8px; padding: 6px 10px; background:#FBB161 ; color: #ffffff; font-weight: bold; border-radius: 5px;">☀︎代表的なシグナル番号☀︎</span></div>
-<div style="border: 2px solid#FBB161 ; padding: 25px 12px 10px; font-size: 1em; border-radius: 5px;">
-
+☀︎ 代表的なシグナル番号 ☀︎
+<br>
 「1」・・・HUP (SIGHUP)端末が制御不能もしくは切断による終了<br>
 「2」・・・INT (SIGINT)キーボードからの割り込み。Ctrl+C と同じ<br>
 「9」・・・KILL (SIGKILL)強制終了<br>
@@ -80,14 +79,12 @@ $ kill 22385
 「19」・・・STOP (SIGSTOP)一時停止
 <br>
 
-</div>
-
 - オプションでシグナルを指定しないときは、15 番の TERM が送信される。
 - 制御できなくなったプロセスを強制的に終了するときは、 9 番の KILL を送信する。
 
 # exit コマンド
 
-###### <span style="background: linear-gradient(transparent 60%, #ffff00 60%);">ログアウトする</span>
+###### ログアウトする
 
 ```bash
 
@@ -105,6 +102,6 @@ $ exit
 
 ### 参考にしたサイト
 
-- [https://eng-entrance.com/linux-command-ps]
-- [https://www.sejuku.net/blog/50251]
-- [https://eng-entrance.com/linux-command-exit]
+- https://eng-entrance.com/linux-command-ps
+- https://www.sejuku.net/blog/50251
+- https://eng-entrance.com/linux-command-exit

@@ -5,30 +5,26 @@
 この家のどの Web ブラウザに返すかは、プライベート IP アドレスでわかる。  
 どのアプリケーション(サービス)と通信するかは、ポート番号でわかる。
 
-![IPIPアドレスとポート番号](../image/IPアドレスとポート番号.png)
+![IPアドレスとポート番号](../image/IPアドレスとポート番号.png)
 
 # IP アドレスとは
 
 IP アドレスとは、
-<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">コンピュータごとの識別番号</span>のこと。  
+コンピュータごとの識別番号のこと。  
 よく住所に例えられる。  
 接続したコンピュータを指定できるが、そのサービスまでは指定できない。
 
 - 現在 IPv4 というプロトコルで通信している。今後番号が不足するので IPv6 が広まりつつある。
-
 - 本来は 32 ビットの 2 進数の数字で表現されるが、人間が読みやすくするため 10 進数に変換して表示される。  
   例：10101100.11011001.10101111.01000011 → 172.217.175.67
 
-<br>
+- グローバル IP アドレスとは、
 
-- <span style="background: linear-gradient(transparent 60%, #ffff00 60%);">グローバル IP アドレス</span>とは、
   - WAN での通信でインターネットサービスプロバイダから割り当てられる IP アドレス。
   - 世界中でアドレスの重複はない。
   - ICANN やその下部組織が管理している。
 
-<br>
-
-- <span style="background: linear-gradient(transparent 60%, #ffff00 60%);">プライベート IP アドレス</span>とは、
+- プライベート IP アドレスとは、
   - LAN の中の通信で割り当てられる IP アドレス。
   - パソコン起動と同時に自動で割り当てられ、一つの LAN 内で重複さえしなければ同じ IP アドレスを利用できる。
   - インターネットへのアクセスが必要な場合、ルーターがグローバル IP アドレスに変換する。
@@ -48,7 +44,7 @@ IP アドレスとは、
 
 ポート番号とは、  
 IP アドレスの下に配置されている補助的なアドレスのこと。  
-TCP/IP において<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">コンピューター内部で動作するサービスを識別できる。</span>  
+TCP/IP においてコンピューター内部で動作するサービスを識別できる。
 よく部屋番号やドアに例えられる。
 
 - 16 ビットの 2 進数で表現され、0〜65535 までの識別番号が割り当てられている。
@@ -59,21 +55,20 @@ TCP/IP において<span style="background: linear-gradient(transparent 60%, #ff
 | 1024~49151       | レジスターポート   | メーカー独自のソフトウェアで使用 |
 | 49152〜65535     | ダイナミックポート | クライエント側で自由に使用できる |
 
-<div style="height: 12px;"><span style="margin-left: 8px; padding: 6px 10px; background:#FBB161 ; color: #ffffff; font-weight: bold; border-radius: 5px;">☀︎代表的なポート番号☀︎</span></div>
-<div style="border: 2px solid#FBB161 ; padding: 25px 12px 10px; font-size: 1em; border-radius: 5px;">
-「20」・・・FTP（ファイル転送用）<br>
-「21」・・・FTP（ファイル制御用）<br>
-「22」・・・SSH<br>
-「25」・・・SMTP（メール送信）<br>
-「80」・・・HTTP<br>
-「110」・・・POP3（メール受信）<br>
-「443」・・・HTTPS<br>
-</div>
+☀︎ 代表的なポート番号 ☀︎
+
+「20」・・・FTP（ファイル転送用）
+「21」・・・FTP（ファイル制御用）
+「22」・・・SSH
+「25」・・・SMTP（メール送信）
+「80」・・・HTTP
+「110」・・・POP3（メール受信）
+「443」・・・HTTPS
 
 # ドメインとは
 
 ドメインとは、  
-IP アドレスは覚えにくいので、<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">別名として利用</span>される。
+IP アドレスは覚えにくいので、別名として利用される。
 
 - 世界中に同じドメインは存在しない。
 - ドメインを利用してコンピュータに接続するときは、ドメインを IP アドレスへと変換する必要がある。(DNS という)
@@ -82,6 +77,6 @@ IP アドレスは覚えにくいので、<span style="background: linear-gradie
 
 #### 参考にしたサイト
 
-- IP アドレス[https://www.value-domain.com/media/ipaddress/]
-- ポート番号[https://web773.hatenablog.com/entry/2021/06/27/075655]
-- NAT[https://novablog.work/how-does-the-internet-work/]
+- [IP アドレス](https://www.value-domain.com/media/ipaddress/)
+- [ポート番号](https://web773.hatenablog.com/entry/2021/06/27/075655)
+- [NAT](https://novablog.work/how-does-the-internet-work/)

@@ -4,7 +4,7 @@ Linux で使うコマンドについてまとめました。
 
 # cd コマンド
 
-###### <span style="background: linear-gradient(transparent 60%, #ffff00 60%);">ディレクトリを変更する</span>
+###### ディレクトリを変更する
 
 ```bash
 $ cd
@@ -21,12 +21,11 @@ $ cd
 
 # pwd コマンド
 
-###### <span style="background: linear-gradient(transparent 60%, #ffff00 60%);">現在使っているディレクトリ（カレントディレクトリ）の表示</span>
+###### 現在使っているディレクトリ（カレントディレクトリ）の表示
 
 ```bash
 $ pwd
 /home/user
-
 ```
 
 `pwd ［オプション］ `
@@ -36,14 +35,12 @@ $ pwd
 
 # ls コマンド
 
-###### <span style="background: linear-gradient(transparent 60%, #ffff00 60%);">ファイルやディレクトリの一覧を取得する</span>
+###### ファイルやディレクトリの一覧を取得する
 
 ```bash
-
 $ ls
 ダウンロード デスクトップ ビデオ 画像
 テンプレート ドキュメント 音楽 公開
-
 ```
 
 `ls ［オプション］［ファイルまたはディレクトリ名］`
@@ -64,10 +61,7 @@ $ ls
 
 ☀︎ オプションはつなげて使うこともできる。順不同。 -la、-lh、-ltr など
 
-<br>
-
-<div style="height: 12px;"><span style="margin-left: 8px; padding: 6px 10px; background:#FBB161 ; color: #ffffff; font-weight: bold; border-radius: 5px;">☀︎-lオプションの詳細表示☀︎</span></div>
-<div style="border: 2px solid#FBB161 ; padding: 25px 12px 10px; font-size: 1em; border-radius: 5px;">
+☀︎-l オプションの詳細表示 ☀︎
 
 ```bash
 $ ls -l
@@ -76,20 +70,18 @@ drwxr-xr-x 2 root root 4096 Dec 23 13:14 test
 
 ```
 
-「-」・・・ファイルタイプ<br>
-「rw-r--r--」・・・パーミッション（アクセス権限） <br>
-「1」・・・ハードリンクの数 <br>
-「root」・・・所有者 <br>
-「root」・・・グループ名 <br>
-「11」・・・バイトサイズ <br>
-「Dec 23 13:11」・・・タイムスタンプ(更新日時) <br>
-「a.txt」・・・ファイル名 <br>
-
-</div>
+「-」・・・ファイルタイプ
+「rw-r--r--」・・・パーミッション（アクセス権限）
+「1」・・・ハードリンクの数
+「root」・・・所有者
+「root」・・・グループ名
+「11」・・・バイトサイズ
+「Dec 23 13:11」・・・タイムスタンプ(更新日時)
+「a.txt」・・・ファイル名
 
 ---
 
 ### 参考にしたサイト
 
-- [https://eng-entrance.com/linux_command_ls]
-- [https://qiita.com/chihiro/items/6e1404c41e1236a9efe1]
+- https://eng-entrance.com/linux_command_ls
+- https://qiita.com/chihiro/items/6e1404c41e1236a9efe1

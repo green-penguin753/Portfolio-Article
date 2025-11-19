@@ -1,6 +1,6 @@
 # 【Git】git checkout コマンド
 
-Gitのチェックアウトに関するコマンドをまとめてみました。
+Git のチェックアウトに関するコマンドをまとめてみました。
 git checkout コマンドは作業するブランチを切り替え、ファイルの復元、特定コミットへの移動など多機能なコマンドです。
 
 ---
@@ -59,8 +59,10 @@ git checkout <ブランチ名> <ファイル名>
 先頭７桁をショートコミットハッシュといい「git log --oneline」で確認できる。通常こちらを使う。</div>
 
 <div style="height: 12px;"><span style="margin-left: 8px; padding: 6px 10px; background:#FBB161 ; color: #ffffff; font-weight: bold; border-radius: 5px;">☀︎コマンド機能分割☀︎</span></div>
-<div style="border: 2px solid#FBB161 ; padding: 25px 12px 10px; font-size: 1em; border-radius: 5px;">・git switchコマンド...ブランチの切り替えや新規作成。<br>
-- git restoreコマンド...作業ディレクトリやステージングエリアのファイルの変更や復元</div>
+<div style="border: 2px solid#FBB161 ; padding: 25px 12px 10px; font-size: 1em; border-radius: 5px;">
+・git switchコマンド...ブランチの切り替えや新規作成。<br>
+・git restoreコマンド...作業ディレクトリやステージングエリアのファイルの変更や復元
+</div>
 
 ---
 

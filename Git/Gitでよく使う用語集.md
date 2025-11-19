@@ -44,7 +44,7 @@ git add コマンドによって実行される。別名コミット予定。
 
 <div style="height: 12px;"><span style="margin-left: 8px; padding: 6px 10px; background:#FBB161 ; color: #ffffff; font-weight: bold; border-radius: 5px;">☀︎その他の用語☀︎</span></div>
 <div style="border: 2px solid#FBB161 ; padding: 25px 12px 10px; font-size: 1em; border-radius: 5px;">・ワークツリー(working tree)...作業中のファイルやフォルダのこと。別名作業ディレクトリ。<br>
-・インデックス(index）...コミットするためのファイルを登録するスペースのこと。別名ステージングエリア</div>
+・インデックス（index）...コミットするためのファイルを登録するスペースのこと。別名ステージングエリア</div>
 
 #### コミット(commit)
 
@@ -62,10 +62,12 @@ git push コマンドによって実行される。<br>
 
 #### プル(pull)
 
-リモートディレクトリから<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">ローカルディレクトリにダウンロードし反映</span>させること。
+リモートディレクトリからローカルディレクトリにダウンロードし反映させること。
 git pull コマンドによって実行される。
 
-<div style="height: 12px;"><span style="margin-left: 8px; padding: 6px 10px; background:#FBB161 ; color: #ffffff; font-weight: bold; border-radius: 5px;">☀︎その他の用語☀︎</span></div>
+<div style="height: 12px;"><span style="margin-left: 8px; padding: 6px 10px; background:#FBB161 ; color: #ffffff; font-weight: bold; border-radius: 5px;">
+☀︎その他の用語☀︎
+</span></div>
 <div style="border: 2px solid#FBB161 ; padding: 25px 12px 10px; font-size: 1em; border-radius: 5px;">
 ・フェッチ(fetch)..リモートリポジトリの最新の履歴の取得のみ行う。<br>
 ・マージ(merge)...ブランチを統合する<br>

@@ -3,13 +3,13 @@
 # 概要
 
 Web アプリケーションのユーザーの入力領域に  
-攻撃者が<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">不正な SQL 文を注入し、データベースに意図しない命令を実行させる</span>攻撃手法。
+攻撃者が不正な SQL 文を注入し、データベースに意図しない命令を実行させる攻撃手法。
 
 - ログインフォームや検索機能などを持つ Web サイトは特に注意する。
 
 ###### 発生しうる脅威
 
-- <span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">重要情報の漏洩</span>  
+- 重要情報の漏洩
   データベースに格納されている重要な情報(パスワードやカード情報など)が盗まれる。  
   企業の信頼を大きく損なうことにもつながる。
 
@@ -31,7 +31,6 @@ SELECT * FROM users WHERE id='John' AND pass='123pass';
 
 --攻撃者の入力　
  SELECT * FROM users WHERE id='' or 1=1; -- 'AND pass='123pass';
-
 ```
 
 ☀︎ 攻撃者が$id に「' or 1=1; --」と入力されると、
@@ -43,13 +42,13 @@ SELECT * FROM users WHERE id='John' AND pass='123pass';
 
 # 原因
 
-ユーザーからの入力値を<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">そのまま SQL 文に埋め込む</span>こと
+ユーザーからの入力値をそのまま SQL 文に埋め込むこと
 
 # 対策
 
 ### 根本的解決
 
-###### １.<span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">プレースホルダーとプリペアドステートメントで実装する</span>
+###### １.プレースホルダーとプリペアドステートメントで実装する
 
 - プレースホルダーとは、
 
@@ -57,7 +56,7 @@ SELECT * FROM users WHERE id='John' AND pass='123pass';
   - これにより SQL 構文と値が別々にデータベースに送信され、  
     悪意のある値であっても SQL として解釈されず安全に実行される。
 
-- <span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">静的プレースホルダー</span>
+- 静的プレースホルダー
   - プリペアドステートメントは、  
     プレースホルダを含む SQL 文を先に準備し、後からデータベース側でバインドして実行する仕組み。
   - 同じ SQL 構文で何度も実行できるため、効率的に使える。
@@ -102,7 +101,7 @@ SELECT 操作で十分であれは、INSERT や DELETE 文の権限までは付�
 
 ### 1.Eloquent ORM を使う
 
-- Laravel には、<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">「Eloquent ORM」</span>という PDO のプリペアドステートメントを利用した機能が搭載されている。
+- Laravel には、「Eloquent ORM」という PDO のプリペアドステートメントを利用した機能が搭載されている。
 
 - モデルクラスとしてデータベースのテーブルと連携し、SQL 文を直接書かずにデータベースを操作できる。
 
@@ -115,7 +114,6 @@ SELECT 操作で十分であれは、INSERT や DELETE 文の権限までは付�
 Post.php ファイルに
 
 ```php
-
 //Postクラスの作成
 class Post extends Model
 {
@@ -128,7 +126,6 @@ class Post extends Model
 PostController.php ファイルに
 
 ```php
-
 class PostController extends Controller
 {
 	public function index() {
@@ -137,7 +134,6 @@ class PostController extends Controller
 		return view('posts.index', compact('posts'));
 		}
 }
-
 ```
 
 ③**ビューで$posts を使い表示させる**  

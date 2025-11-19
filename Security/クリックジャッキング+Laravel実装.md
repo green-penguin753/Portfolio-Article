@@ -3,14 +3,14 @@
 # 概要
 
 正規サイトにログインした状態で、  
-攻撃者が罠サイトにユーザーを誘導し<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">iframe や透明なレイヤーを使ってリンクやボタンを重ねて配置</span>し、ユーザーに意図しない操作をさせる攻撃手法。
+攻撃者が罠サイトにユーザーを誘導しiframe や透明なレイヤーを使ってリンクやボタンを重ねて配置し、ユーザーに意図しない操作をさせる攻撃手法。
 
 ユーザーが一見無害に見えるサイトのボタンをクリックすると、  
 実際には背後にある iframe 内のボタンをクリックさせられている。
 
 ###### 発生しうる脅威
 
-- <span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">金銭的被害</span>  
+- 金銭的被害 
   不正送金やクレジットカードの不正利用、EC サイトで意図しない商品購入など
 
 - 登録情報の漏洩・改ざん  
@@ -24,7 +24,7 @@
 
 # 原因
 
-- ログイン後の重要な操作や設定を、<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">クリック操作のみ</span>で実行可能にしている仕様
+- ログイン後の重要な操作や設定を、クリック操作のみで実行可能にしている仕様
 
 - iframe で埋め込めるページに、重要な操作の処理ができる機能の実装
 
@@ -32,23 +32,21 @@
 
 ### 根本的解決
 
-###### １.<span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">frame や iframe によるページの読み込みを制限する</span>
+###### １.frame や iframe によるページの読み込みを制限する
 
 HTTP レスポンスヘッダに`X-Frame-Options: DENY`(または`SAMEORIGIN`)と設定すると、  
 X-Frame-Option に対応したブラウザでは、frame 要素や iframe 要素によるページの埋め込みができなくなる。  
 IE7 など対応していないブラウザもあるため、CSP とあわせて対策するといい。
 
-<div style="height: 12px;"><span style="margin-left: 8px; padding: 6px 10px; background:#FBB161 ; color: #ffffff; font-weight: bold; border-radius: 5px;">☀︎X-Frame-Optionsヘッダの設定値☀︎</span></div>
-<div style="border: 2px solid#FBB161 ; padding: 25px 12px 10px; font-size: 1em; border-radius: 5px;">
+☀︎X-Frame-Optionsヘッダの設定値☀︎
 
-DENY 　　　　・・・すべてのウェブページでフレーム内の表示を禁止<br>
-SAMEORIGIN ・・・同一オリジンのときのみ表示を許可する<br>
-ALLOW-FROM・・・指定したオリジンのみ表示を許可する<br>
+DENY 　　　　・・・すべてのウェブページでフレーム内の表示を禁止
+SAMEORIGIN ・・・同一オリジンのときのみ表示を許可する
+ALLOW-FROM・・・指定したオリジンのみ表示を許可する
 
-<div style="font-size:16px;">  ☀︎オリジンとは、
-URLのスキーム、ホストドメイン、ポート番号が同じ組み合わせのこと</div>
+☀︎オリジンとは、
+URLのスキーム、ホストドメイン、ポート番号が同じ組み合わせのこと
 
-</div>
 
 ###### ２.処理の直前に再度パスワードを入力させる
 
@@ -73,11 +71,11 @@ AddXFrameOptions.php ファイルに
 ```php
 class AddXFrameOptions　//AddXFrameOptionsクラスを作成
 {
-    public function handle($request, Closure $next)
-    {
-        $response = $next($request);
-        $response->headers->set('X-Frame-Options', 'deny'); //すべてのウェブページでフレーム内の表示を禁止
-        return $response;
+  public function handle($request, Closure $next)
+  {
+    $response = $next($request);
+    $response->headers->set('X-Frame-Options', 'deny'); //すべてのウェブページでフレーム内の表示を禁止
+      return $response;
     }
 }
 ```

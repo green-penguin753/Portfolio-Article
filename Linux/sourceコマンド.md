@@ -5,7 +5,7 @@
 # source コマンド
 
 source コマンドとは、  
-ファイルに書かれたコマンドを<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">現在のシェル環境で実行する</span>
+ファイルに書かれたコマンドを現在のシェル環境で実行する
 
 ```bash
 $ source sample.sh
@@ -50,18 +50,17 @@ $ echo $VAR
   元のプロセスとは完全に独立したプロセスなので、  
   元のシェル環境を変えたくないとき(スクリプトのテストなど)に使う。
 
-<div style="height: 12px;"><span style="margin-left: 8px; padding: 6px 10px; background:#FBB161 ; color: #ffffff; font-weight: bold; border-radius: 5px;">☀︎サブシェルとは☀︎</span></div>
-<div style="border: 2px solid#FBB161 ; padding: 25px 12px 10px; font-size: 1em; border-radius: 5px;">
+☀︎ サブシェルとは ☀︎
+<br>
 ・シェル実行環境のコピー。<br>
 ・子プロセスを作成するとは限らない。<br>
 ・サブシェル内で変数を変更しても、元のシェル環境には影響しない。
-</div>
 
 ---
 
 ### 参考にしたサイト
 
-- [https://eng-entrance.com/linux-command-source]
-- [https://qiita.com/YumaInaura/items/00437e6ab14d96adb71f]
-- [https://eng-entrance.com/linux-command-source#source-3]
-- サブシェル[https://qiita.com/ko1nksm/items/19d300c4cb812b0fde1e]
+- https://eng-entrance.com/linux-command-source
+- https://qiita.com/YumaInaura/items/00437e6ab14d96adb71f
+- https://eng-entrance.com/linux-command-source#source-3
+- サブシェルhttps://qiita.com/ko1nksm/items/19d300c4cb812b0fde1e

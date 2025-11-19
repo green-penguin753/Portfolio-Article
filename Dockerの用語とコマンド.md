@@ -4,8 +4,8 @@
 
 #### docker(ドッカー)とは
 
-環境(開発・本番など)の<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">設定を簡単に構築</span>でき、  
-また、<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">環境が違っても同じように動作させることができるツール</span>。
+環境(開発・本番など)の設定を簡単に構築でき、  
+また、環境が違っても同じように動作させることができるツール。
 
 - コンテナと呼ばれる隔離された環境で作業ができる。
 
@@ -19,7 +19,7 @@
 
 #### images(イメージ)とは
 
-アプリケーションの実行に<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">必要な設定ファイルをまとめたテンプレート</span>。  
+アプリケーションの実行に必要な設定ファイルをまとめたテンプレート
 （アプリケーション本体、ライブラリ、フレームワーク、基本コマンドなど）
 
 - Docker コンテナを作成するための設計図。
@@ -27,7 +27,7 @@
 
 #### container(コンテナ)とは
 
-一つの OS 上で、CPU・メモリ・プロセス空間などが<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">独立した仮想環境</span>のこと。
+一つの OS 上で、CPU・メモリ・プロセス空間などが独立した仮想環境のこと。
 
 - Docker イメージをもとに作成される。
 
@@ -39,7 +39,7 @@
 
 #### service(サービス)とは
 
-作業ごとの<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">環境(コンテナ)の集まり</span>のこと。
+作業ごとの環境(コンテナ)の集まりのこと。
 
 - Docker Compose などを使い複数のコンテナを連携させることで、サービスを構築する。  
   （アプリケーション開発しながら、データベース環境からデータを取得するなど）
@@ -50,73 +50,63 @@
 
 ##### コンテナの起動
 
-<div style="border: 2px solid #ccc; padding: 10px; box-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
-docker-compose up
-</div>
-複数のコンテナを一斉に起動する。   
-コンテナ1つだけのときは`docker container start`でも可能。
+`docker-compose up`
+
+複数のコンテナを一斉に起動する。  
+コンテナ 1 つだけのときは`docker container start`でも可能。
 
 ##### コンテナの停止
 
-<div style="border: 2px solid #ccc; padding: 10px; box-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
-docker-compose down
-</div>
-複数のコンテナを一斉に停止する。   
-コンテナ1つだけのときは`docker stop コンテナ名` でも可能。
+`docker-compose down`
+
+複数のコンテナを一斉に停止する。  
+コンテナ 1 つだけのときは`docker stop コンテナ名` でも可能。
 
 ##### コンテナを表示
 
-<div style="border: 2px solid #ccc; padding: 10px; box-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
-docker ps -a
-</div>
-全てのコンテナを表示する。(停止中も含む).   
+`docker ps -a`
+
+全てのコンテナを表示する。(停止中も含む).  
 詳細表示は`docker container inspect コンテナ名`
 
 ##### コンテナを削除
 
-<div style="border: 2px solid #ccc; padding: 10px; box-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
-docker rm コンテナ名
-</div>
+`docker rm コンテナ名`
+
 コンテナを削除する。(停止中のものしか削除できない)
 
 ## 2.イメージ管理
 
 ##### イメージをダウンロード
 
-<div style="border: 2px solid #ccc; padding: 10px; box-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
-docker image pull [オプション]　イメージ名
-</div>
-Docker Hubなどからイメージをダウンロードする。
+`docker image pull [オプション]　イメージ名`
+
+Docker Hub などからイメージをダウンロードする。
 
 ##### イメージを組み立てる
 
-<div style="border: 2px solid #ccc; padding: 10px; box-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
-docker build -t イメージ名 .
-</div>
-Dockerfileを使用してイメージをビルドする。   
+`docker build -t イメージ名 .`
+
+Dockerfile を使用してイメージをビルドする。  
 `docker container run `はコンテナを新規作成して起動する。
 
 ##### イメージを表示
 
-<div style="border: 2px solid #ccc; padding: 10px; box-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
-docker image ls [オプション]
-</div>
+`docker image ls [オプション]`
+
 ローカル(ダウンロード済み)のイメージを一覧表示する。
 
 ##### イメージを削除
 
-<div style="border: 2px solid #ccc; padding: 10px; box-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
-docker image rmi [オプション]　イメージ名
-</div>
+`docker image rmi [オプション]　イメージ名`
+
 イメージを削除する。
 
 ## 3.その他
 
 ##### Docker のバージョン確認
 
-<div style="border: 2px solid #ccc; padding: 10px; box-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
-docker -v
-</div>
+`docker -v`
 
 Docker システム全体の情報を表示したいときは`docker info`
 

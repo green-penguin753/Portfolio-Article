@@ -4,7 +4,7 @@ Linux で基本的なファイル操作に使うコマンドについてまと�
 
 # mkdir コマンド
 
-###### <span style="background: linear-gradient(transparent 60%, #ffff00 60%);">ディレクトリを新規作成する</span>
+###### ディレクトリを新規作成する
 
 ```bash
 
@@ -27,7 +27,7 @@ $ mkdir work01
 
 # rmdir コマンド
 
-###### <span style="background: linear-gradient(transparent 60%, #ffff00 60%);">ディレクトリを削除する</span>
+###### ディレクトリを削除する
 
 ```bash
 $ rmdir work01
@@ -51,7 +51,7 @@ $ rmdir work01
 
 # touch コマンド
 
-###### <span style="background: linear-gradient(transparent 60%, #ffff00 60%);">ファイルのタイムスタンプの更新、ファイルの新規作成する</span>
+###### ファイルのタイムスタンプの更新、ファイルの新規作成する
 
 ```bash
 $ touch a.dat
@@ -60,7 +60,7 @@ $ touch a.dat
 
 `touch ［オプション］ファイル名 `
 
-- 存在するファイルを指定したときは、  
+- 存在するファイルを指定したときは、
   タイムスタンプ(更新日時と変更日時)を更新する。
 - 存在しないファイルの場合は、  
   ファイルサイズが 0 バイトの空のファイルを新規作成する。
@@ -76,7 +76,7 @@ $ touch a.dat
 
 # rm コマンド
 
-###### <span style="background: linear-gradient(transparent 60%, #ffff00 60%);">ファイルやディレクトリを削除する</span>
+###### ファイルやディレクトリを削除する
 
 ```bash
 $ rm a.dat
@@ -100,7 +100,7 @@ $ rm a.dat
 
 # mv コマンド
 
-###### <span style="background: linear-gradient(transparent 60%, #ffff00 60%);">ファイルやディレクトリの移動、名称を変更する。</span>
+###### ファイルやディレクトリの移動、名称を変更する。
 
 ```bash
 $ mv test01.txt test
@@ -125,7 +125,7 @@ $ mv test01.txt test02.txt
 
 # cp コマンド
 
-###### <span style="background: linear-gradient(transparent 60%, #ffff00 60%);">ファイルやディレクトリをコピーする</span>
+###### ファイルやディレクトリをコピーする
 
 ```bash
 
@@ -150,8 +150,8 @@ $ cp test01.txt test02.txt
 
 ### 参考にしたサイト
 
-- [https://eng-entrance.com/linux-command-mkdir]
-- [https://uxmilk.jp/8318]
-- [https://eng-entrance.com/linux-command-rmdir]
-- [https://eng-entrance.com/linux-command-touch]
-- [https://apidog.com/jp/blog/linux-file-management-mv-cp-rm-commands/]
+- https://eng-entrance.com/linux-command-mkdir
+- https://uxmilk.jp/8318
+- https://eng-entrance.com/linux-command-rmdir
+- https://eng-entrance.com/linux-command-touch
+- https://apidog.com/jp/blog/linux-file-management-mv-cp-rm-commands/

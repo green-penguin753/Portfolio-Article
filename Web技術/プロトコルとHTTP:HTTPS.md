@@ -10,23 +10,18 @@
 - SMTP・・・メール送信用のプロトコル
 - POP・・・メール受信用のプロトコル
 
-<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">TCP /IP</span>
-とは、複数のプロトコルの集まりのこと。  
+TCP /IP とは、複数のプロトコルの集まりのこと。  
 異なる OS などの機器間でも接続するためのプロトコルで、
 HTTP もアプリケーション層の一つとして含まれている。
 
-<div style="height: 12px;"><span style="margin-left: 8px; padding: 6px 10px; background:#FBB161 ; color: #ffffff; font-weight: bold; border-radius: 5px;">☀︎TCP/IPの階層構造☀︎</span></div>
-<div style="border: 2px solid#FBB161 ; padding: 25px 12px 10px; font-size: 1em; border-radius: 5px;">
-アプリケーション層(レイヤー4)・・・HTTP、SMTP、FTPなど<br>
-トランスポート層 (レイヤー3)・・・TCP、UDP<br>
-インターネット層(レイヤー2)・・・IP、ICMPなど<br>
-ネットワークインターフェイス層(レイヤー1) ・・・イーサネット、Wi-Fiなど<br>
-☀︎環境や用途に応じて各層のプロトコルを使い分けるイメージ
-</div>
+☀︎TCP/IP の階層構造 ☀︎
+アプリケーション層(レイヤー 4)・・・HTTP、SMTP、FTP など
+トランスポート層 (レイヤー 3)・・・TCP、UDP
+インターネット層(レイヤー 2)・・・IP、ICMP など
+ネットワークインターフェイス層(レイヤー 1) ・・・イーサネット、Wi-Fi など
+☀︎ 環境や用途に応じて各層のプロトコルを使い分けるイメージ
 
 従来の TCP/IP に代わる、QUIC という UDP を基盤にした新しい通信プロトコルの採用が広がっている。
-
-<br>
 
 # HTTP とは
 
@@ -40,7 +35,7 @@ Hypertext Transfer Protocol の略。
 
 #　 HTTPS とは
 HTTPS とは、HTTP と SSL/TLS を組み合わせた通信の総称。  
-<span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">通信路を暗号化して、HTTP よりセキュリティを高めた方法。</span>  
+通信路を暗号化して、HTTP よりセキュリティを高めた方法。
 Hypertext Transfer Protocol Secure の略。
 
 - HTTP と基本的な構造は同じ。
@@ -51,7 +46,7 @@ Hypertext Transfer Protocol Secure の略。
   - 暗号化通信により盗聴防止
   - メッセージダイジェストによる改ざん防止
   - SSL サーバー証明書によりなりすまし防止  
-    の３つの仕組みで Web サイトの安全性を確保している。<br>
+    の３つの仕組みで Web サイトの安全性を確保している。
 
 - **SSL/TLS ハンドシェイク**とは、Web ブラウザと Web サーバーの間で HTTPS の通信を開始するためのやりとり。TCP コネクションが確立された後に行われる。
 
@@ -60,9 +55,9 @@ Hypertext Transfer Protocol Secure の略。
 HTTP メッセージとは、  
 Web ブラウザ（クライエント）と Web サーバーの間で情報をやりとりするために使うデータ形式のこと。
 
-Web ブラウザから Web サーバーへの要求を送る<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">HTTP リクエスト  
-</span>
-HTTP リクエストを処理し、その結果を Web ブラウザに返す<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">HTTP レスポンス</span>  
+Web ブラウザから Web サーバーへの要求を送る HTTP リクエスト
+
+HTTP リクエストを処理し、その結果を Web ブラウザに返す HTTP レスポンス
 の２種類に分けられる。
 
 ![HTTPメッセージ](../image/HTTPメッセージ.png)

@@ -4,7 +4,7 @@ Linux で使うコマンドについてまとめました。
 
 # man コマンド
 
-###### <span style="background: linear-gradient(transparent 60%, #ffff00 60%);">オンラインマニュアルを表示する</span>
+###### オンラインマニュアルを表示する
 
 ```bash
 $ man passwd
@@ -32,8 +32,8 @@ PASSWD (1)
   - セクション５のマニュアルを表示したいときは、  
     $ man 5 passwd と入力する。
 
-<div style="height: 12px;"><span style="margin-left: 8px; padding: 6px 10px; background:#FBB161 ; color: #ffffff; font-weight: bold; border-radius: 5px;">☀︎マニュアルのセクション☀︎</span></div>
-<div style="border: 2px solid#FBB161 ; padding: 25px 12px 10px; font-size: 1em; border-radius: 5px;">
+☀︎ マニュアルのセクション ☀︎
+<br>
 1 ・・・ユーザーコマンド<br>
 2・・・システムコール<br>
 3・・・システムライブラリや関数<br>
@@ -44,11 +44,9 @@ PASSWD (1)
 8・・・システム管理系のコマンド<br>
 9・・・カーネルなどの情報<br>
 
-</div>
-
 # history コマンド
 
-###### <span style="background: linear-gradient(transparent 60%, #ffff00 60%);">過去に実行したコマンドの一覧を表示する</span>
+###### 過去に実行したコマンドの一覧を表示する
 
 ```bash
 $ history
@@ -83,7 +81,7 @@ $ history
 
 ### 参考にしたサイト
 
-- [https://eng-entrance.com/linux-command-man]
-- [https://www.bioerrorlog.work/entry/how-to-man-command]
-- [https://qiita.com/suzuko24/items/f3852f76922ae98227aa]
-- [https://eng-entrance.com/linux-command-history]
+- https://eng-entrance.com/linux-command-man
+- https://www.bioerrorlog.work/entry/how-to-man-command
+- https://qiita.com/suzuko24/items/f3852f76922ae98227aa
+- https://eng-entrance.com/linux-command-history

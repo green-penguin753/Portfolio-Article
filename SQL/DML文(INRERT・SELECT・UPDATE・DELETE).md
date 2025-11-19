@@ -11,16 +11,12 @@ SQL ではデータの操作・定義・制御の 3 つができ、DML(データ
 
 # INSERT 文
 
-INSERT 文はテーブルに<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">行(レコード)を追加</span>するとき使う。
+INSERT 文はテーブルに行(レコード)を追加するとき使う。
 
-<div style="background: #f5f5f5;  border-radius: 5px; padding: 10px; margin: 10px;">
-<p style="margin: 0;">
-
-INSERT INTO テーブル名(列名 1, 列名 2, …)<br>
-VALUES (値 1, 値 2, …);<br>
-
-</p>
-</div>
+```sql
+INSERT INTO テーブル名(列名 1, 列名 2, …)
+VALUES (値 1, 値 2, …);
+```
 
 - `INTO`と組み合わせて取得したいテーブル名を指定する。
 - テーブル名の後の列名を省略することもできるが、VALUES 句では全ての列(カラム)の順番で値を指定する。
@@ -29,26 +25,22 @@ VALUES (値 1, 値 2, …);<br>
 ```SQL
 INSERT INTO customers (id, name, age)
 VALUES (3, ’John’, 20);
-
 ```
 
 # SELECT 文
 
-SELECT 文は<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">データを取得</span>するときに使う。
+SELECT 文はデータを取得するときに使う。
 
 - **SELECT 文の記述順**
-<div style="background: #f5f5f5;  border-radius: 5px; padding: 10px; margin: 10px;">
-<p style="margin: 0;">
 
-SELECT 列名 1, 列名 2, ・・・<br>
-FROM テーブル名<br>
-[WHERE］<br>
-[GROUP BY］<br>
-[HAVING］<br>
-[ORDER BY］<br>
-
-</p>
-</div>
+```
+SELECT 列名 1, 列名 2, ・・・
+FROM テーブル名
+[WHERE］
+[GROUP BY］
+[HAVING］
+[ORDER BY］
+```
 
 ```SQL
 SELECT  name, age
@@ -62,7 +54,7 @@ SELECT  name, age
 #### SELECT 文の実行順序
 
 SQL は記述した上から順に実行されるのではなく、  
-<span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">句ごとに決まった実行順序</span>で処理される。
+句ごとに決まった実行順序で処理される。
 
 ①FROM ：テーブルの読み込み<br>
 ②JOIN ：テーブル同士の結合<br>
@@ -76,21 +68,17 @@ SQL は記述した上から順に実行されるのではなく、
 
 # UPDATE 文
 
-UPDATE 文は<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">データを書き換える</span>ときに使う。
+UPDATE 文はデータを書き換えるときに使う。
 
-<div style="background: #f5f5f5;  border-radius: 5px; padding: 10px; margin: 10px;">
-<p style="margin: 0;">
-
+```sql
 UPDATE テーブル名<br>
 SET 列名=値<br>
 WHERE 列名=値<br>
-
-</p>
-</div>
+```
 
 - WHERE で行を指定しないと、全件更新される。
 - SET 句で列名=値を,(コンマ)で区切ると、複数の値を指定できる。
-- 実行後は元に戻せない。→[トランザクション処理](https://greenpenguin.hatenablog.jp/entry/2025/05/25/022222)
+- 実行後は元に戻せない。→ トランザクション処理
 
 ```SQL
 UPDATE customers
@@ -100,21 +88,17 @@ WHERE id=3;
 
 # DELETE 文
 
-DELETE 文は<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">行(レコード)を削除する</span>ときに使う。
+DELETE 文は行(レコード)を削除するときに使う。
 
-<div style="background: #f5f5f5;  border-radius: 5px; padding: 10px; margin: 10px;">
-<p style="margin: 0;">
-
+```sql
 DELETE <br>
 FROM テーブル名<br>
 WHERE 列名=値;
-
-</p>
-</div>
+```
 
 - WHERE で行を指定しないと、全件更新される。
 - 複数の行を指定する場合は、論理演算子（AND, OR, IN）を使う。
-- 実行後は元に戻せない。→[トランザクション処理](https://greenpenguin.hatenablog.jp/entry/2025/05/25/022222)
+- 実行後は元に戻せない。→ トランザクション処理
 
 ```SQL
 DELETE
@@ -124,41 +108,31 @@ WHERE id=3;
 
 # FROM 句
 
-<span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">テーブルを選択しデータの読み込み</span>をする。
+テーブルを選択しデータの読み込みをする。
 
 - JOIN 句を使うと複数のテーブルを指定できる。
 - 副問い合わせを指定でき、一時的なテーブルとして扱うことができる。
 
 # WHERE 句
 
-<span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">テーブル全体から条件の絞り込み</span>をする。  
+テーブル全体から条件の絞り込みをする。  
 検索する前に対象の行を絞る。
 
-<div style="background: #f5f5f5;  border-radius: 5px; padding: 10px; margin: 10px;">
-<p style="margin: 0;">
-WHERE 条件式
-</p>
-</div>
+`WHERE 条件式`
 
 - WHERE 句を指定しないと、テーブル全体が処理対象になる。  
   全ての行(レコード)の更新など。
 - SELECT、UPDATE、DELETE 文で使える。
 - 条件式は結果が必ず真か偽になるように指定する。
 
-- [WHERE 句の演算子](https://greenpenguin.hatenablog.jp/entry/2025/05/19/005656)
-
 # LIMIT 句
 
-<span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">結果から行数を制限</span>する。
+結果から行数を制限する。
 
-<div style="background: #f5f5f5;  border-radius: 5px; padding: 10px; margin: 10px;">
-<p style="margin: 0;">
-LIMIT 取得したい行数
-</p>
-</div>
+`LIMIT 取得したい行数`
 
 - `OFFSET`句と組み合わせて、先頭から何行スキップするかを指定できる。  
-  (LIMIT 句に 2 つの引数を渡すことで、OFFSET 句を省略も可能）
+  （LIMIT 句に 2 つの引数を渡すことで、OFFSET 句を省略も可能）
 
 ```SQL
 SELECT  name
@@ -171,7 +145,7 @@ SELECT  name
 
 # AS 句（エイリアス）
 
-テーブル名やカラム名に<span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">一時的な別名をつける</span>こと。
+テーブル名やカラム名に一時的な別名をつけること。
 
 - テーブル名が長いときや、複雑な結果に名前をつけたいときに使い、読みやすくできる。
 - SELECT 文の実行順序によって使える範囲がある。  

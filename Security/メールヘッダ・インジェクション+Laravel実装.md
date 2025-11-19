@@ -3,18 +3,16 @@
 # 概要
 
 メール送信機能を持つ Web アプリケーションで出力処理に脆弱性があると、  
-攻撃者が<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">メールのヘッダ情報に不正なデータを差し込む</span>ことで、不正な操作を実行する攻撃手法。
+攻撃者がメールのヘッダ情報に不正なデータを差し込むことで、不正な操作を実行する攻撃手法。
 
 - お問い合わせページやアンケートなどのサイトで特に注意が必要。
 
-<br>
-
 ###### 発生しうる脅威
 
-- 攻撃の踏み台として<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">迷惑メールの送信に悪用</span>される
+- 攻撃の踏み台として迷惑メールの送信に悪用される
 - メールの内容の改ざん
 
-```mail
+```php
 //脆弱性のあるコード
 To: info@□□.□□
 From: $email
@@ -50,7 +48,7 @@ Subject: お問い合わせ
 
 ### 根本的解決
 
-###### １.<span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">メールヘッダを固定値にする</span>
+###### １.メールヘッダを固定値にする
 
 メールヘッダにユーザーからの入力された値をそのまま使わない実装をする。
 
@@ -91,7 +89,7 @@ Mail::to($request->input('email'))->send(new ContactFormMail($data));
 // メールアドレスのサニタイズ
 $email = filter_var($request->input('email'), FILTER_SANITIZE_EMAIL);
 // 件名の改行コードの除去
-$subject = str_replace(["\r", "\n", "%0A", "%0D"], "", $request->input('subject')
+$subject = str_replace(["\r", "\n", "%0A", "%0D"], "", $request->input('subject'))
 ```
 
 ☀︎PHP 関数の filter_var()や str_replace()で改行コードを除去している。

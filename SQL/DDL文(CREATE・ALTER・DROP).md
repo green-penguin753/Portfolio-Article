@@ -1,19 +1,17 @@
 # 【SQL】DDL 文(CREATE・ALTER・DROP)
 
 DDL 文(データ定義言語)とは、  
-<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">データベースの構造を作成・変更・削除する</span>ための SQL 文のこと。  
+データベースの構造を作成・変更・削除するための SQL 文のこと。  
 テーブルやインデックス、ビューを操作する。
 
 # 作成(CREATE)
 
-<div style="background: #f5f5f5;  border-radius: 5px; padding: 10px; margin: 10px;">
-<p style="margin: 0;">
-CREATE TABLE テーブル名 （<br>
- 列名1 列名1のデータ型名,<br>
- 列名2 列名1のデータ型名<br>
+```sql
+CREATE TABLE テーブル名 (
+ 列名1 列名1のデータ型名,
+ 列名2 列名1のデータ型名
 )
-</p>
-</div>
+```
 
 - テーブルに行(レコード)を追加するには、INSERT 文を使う。
 
@@ -26,8 +24,6 @@ CREATE TABLE customers (
 ```
 
 ☀︎ テーブルを新規作成する。
-
-<br>
 
 ☀︎ データの詳細設定 ☀︎
 
@@ -50,17 +46,11 @@ INSERT 文でその列の値を省略したときは自動的にその値が入�
 自動採番 <br>
 その行の最大値＋ 1 を自動的にセットする。<br>
 
-</div>
-
 # 削除(DROP)
 
-<div style="background: #f5f5f5;  border-radius: 5px; padding: 10px; margin: 10px;">
-<p style="margin: 0;">
-DROP TABLE テーブル名
-</p>
-</div>
+`DROP TABLE テーブル名`
 
-- [DELETE 文](https://greenpenguin.hatenablog.jp/entry/2025/05/19/005459)はテーブルに登録されたデータの削除をする。
+- DELETE 文はテーブルに登録されたデータの削除をする。
 - テーブルの存在を確認してから作成・削除するには「IF EXISTS」を使う。
 
 ```SQL
@@ -71,35 +61,22 @@ DROP TABLE IF EXISTS customers;
 
 # 変更(ALTER)
 
-・列の追加<br>
+・列の追加
+`ALTER TABLE テーブル名 ADD 列名 データ型`
 
-<div style="background: #f5f5f5;  border-radius: 5px; padding: 10px; margin: 10px;">
-<p style="margin: 0;">
-ALTER TABLE テーブル名 ADD 列名 データ型
-</p>
-</div>
-・列の削除<br>
-<div style="background: #f5f5f5;  border-radius: 5px; padding: 10px; margin: 10px;">
-<p style="margin: 0;">
-ALTER TABLE テーブル名 DROP 列名
-</p>
-</div>
+・列の削除
+`ALTER TABLE テーブル名 DROP 列名`
 
 ```SQL
 ALTER TABLE customers ADD created_date DATETIME;
 ALTER TABLE customers DROP created_date;
-
 ```
 
 - 既存のテーブルに列を追加するときは、新しい列は一番後ろに挿入される。
 
 # 全行の一括削除(TRUNCATE)
 
-<div style="background: #f5f5f5;  border-radius: 5px; padding: 10px; margin: 10px;">
-<p style="margin: 0;">
-TRUNCATE TABLE テーブル名
-</p>
-</div>
+`TRUNCATE TABLE テーブル名`
 
 - DELETE 文は指定した行だけ削除もできるが、TRUNVATE は必ずすべての行を削除する。
 - 記録を残さず削除するので、高速に処理できる。

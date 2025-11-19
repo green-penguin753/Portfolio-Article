@@ -3,7 +3,7 @@
 # 概要
 
 ユーザーからの入力値の処理に脆弱性があると、  
-攻撃者が<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">HTTP リクエストに罠を仕掛けてレスポンスを生成</span>し、  
+攻撃者が HTTP リクエストに罠を仕掛けてレスポンスを生成し、  
 ユーザーに偽の URL をクリックさせ、スクリプトを実行させたり情報を盗み取る攻撃。
 
 改行コードが原因となることから「CRLF インジェクション」とも呼ぶ。
@@ -11,18 +11,16 @@
 複数のレスポンスを作り出す攻撃を  
 「HTTP レスポンス分割（HTTP Response Splitting） 攻撃」と呼ぶ。
 
-<br>
-
 ###### 発生しうる脅威
 
 - XSS 攻撃と同じ
 
-  - <span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">重要情報の漏洩</span>
+  - 重要情報の漏洩
   - Cookie 情報の漏洩
   - ブラウザに任意の Cookie を保存させられる
   - 偽情報の流布による混乱
 
-- <span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">キャッシュサーバのキャッシュ汚染</span>  
+- キャッシュサーバのキャッシュ汚染
   HTTP レスポンス分割攻撃で、  
   悪意あるレスポンスをキャッシュサーバに保存されると、
   他のユーザーも偽ページや不正スクリプトを閲覧し続けてしまう。
@@ -37,7 +35,7 @@
 
 ### 根本的解決
 
-###### １.<span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">ヘッダーの出力用 API を使う</span>
+###### １.ヘッダーの出力用 API を使う
 
 HTTP レスポンスヘッダーをプログラムで直接出力せず、  
 実行環境や言語に用意されているヘッダ出力用の API を使う。
@@ -62,7 +60,7 @@ API を使えないときは、
 
 # Laravel での実装例
 
-### 1. <span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">Laravel の標準レスポンスを使う</span>
+### 1. Laravel の標準レスポンスを使う
 
 HTTP ヘッダの改行コードを自動で除去してくれる。
 

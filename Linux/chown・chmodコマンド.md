@@ -53,7 +53,7 @@ $  chmod g+w work01
 
 <div style="height: 12px;"><span style="margin-left: 8px; padding: 6px 10px; background:#FBB161 ; color: #ffffff; font-weight: bold; border-radius: 5px;">☀︎パーミッション設定☀︎</span></div>
 <div style="border: 2px solid#FBB161 ; padding: 25px 12px 10px; font-size: 1em; border-radius: 5px;">
-[f:id:Greenpenguin:20250223092202p:plain]
+
 
 <br>
 ☀︎パーミッションの指定方法は２通りある。<br>

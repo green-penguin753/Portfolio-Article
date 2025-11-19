@@ -3,7 +3,7 @@
 # 概要
 
 Web アプリケーションの出力処理に脆弱性があると、  
-攻撃者に<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">HTML 内に悪意のあるスクリプトを埋め込まれる</span>。  
+攻撃者に HTML 内に悪意のあるスクリプトを埋め込まれる。  
 ユーザーのブラウザ上でスクリプトを実行させ、
 出力されたその情報を盗み取る（攻撃者のサーバーに送信させるなど）攻撃。
 
@@ -19,7 +19,7 @@ Web アプリケーションの出力処理に脆弱性があると、
 
 ###### 発生しうる脅威
 
-- <span style="background: linear-gradient(transparent 40%, #F9C1CF 100%);">フィッシング詐欺による重要情報の漏洩</span>  
+- フィッシング詐欺による重要情報の漏洩
   本物の Web サイト上に偽のフォームが表示され、ユーザーが入力した個人情報が盗まれる。
 
 - Cookie 情報の漏洩  
@@ -42,7 +42,7 @@ Web アプリケーションの出力処理に脆弱性があると、
 
 ### 根本的解決
 
-###### １.<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">すべての出力要素にエスケープ処理</span>をする
+###### １.すべての出力要素にエスケープ処理をする
 
 - 特別な意味を持つ文字を HTML エンティティへ変換し、無害化(サニタイジング)する。
 - HTML タグを出力するときは、属性値を必ずダブルクォートでくくる。
@@ -98,7 +98,7 @@ print "<input  value=\"" . htmlspecialchars($keyword, ENT_QUOTES). "\">";
 
 ### 1.　{{ }}で囲みエスケープ処理をする
 
-- <span style="background: linear-gradient(transparent 60%, #ffff00 60%);">出力する変数を{{ $変数名 }}と囲む</span>だけで、自動的に PHP の htmlspecialchars 関数を通されエスケープ処理をしてくれる。
+- 出力する変数を{{ $変数名 }}と囲むだけで、自動的に PHP の htmlspecialchars 関数を通されエスケープ処理をしてくれる。
 
 - エスケープ処理をしたくないときは、{!! $変数名 !!}と囲む。非推奨
 

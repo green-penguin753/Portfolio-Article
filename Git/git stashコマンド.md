@@ -11,9 +11,10 @@ stash とは、現在のワークツリーの変更を一時的に保存(退避)
 ### 基本的な退避
 
 <div style="border: 2px solid #ccc; padding: 10px; box-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
-git stash (save "メッセージ"はつけなくても可)
+git stash save "メッセージ"
 </div>
 現在の変更作業を退避する。「git stash save」をよく使用する。
+(save "メッセージ"はつけなくても可)
 
 ## 2.表示
 
