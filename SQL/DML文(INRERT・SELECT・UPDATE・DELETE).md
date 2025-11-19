@@ -56,24 +56,24 @@ SELECT  name, age
 SQL は記述した上から順に実行されるのではなく、  
 句ごとに決まった実行順序で処理される。
 
-①FROM ：テーブルの読み込み<br>
-②JOIN ：テーブル同士の結合<br>
-③WHERE ：取得条件で絞り込み<br>
-④GROUP BY ： グループ化<br>
-⑤HAVING ：④ のグループから絞り込み<br>
-⑥SELECT ：結果を表示するカラムを指定<br>
-⑦DISTINCT ：⑥ の結果から重複する行を除外<br>
-⑧ORDER BY ：⑦ の結果から並び替え<br>
-⑨LIMIT ：⑧ の結果から取得する件数を指定する<br>
+①FROM ：テーブルの読み込み**
+②JOIN ：テーブル同士の結合**
+③WHERE ：取得条件で絞り込み**
+④GROUP BY ： グループ化**
+⑤HAVING ：④ のグループから絞り込み**
+⑥SELECT ：結果を表示するカラムを指定**
+⑦DISTINCT ：⑥ の結果から重複する行を除外**
+⑧ORDER BY ：⑦ の結果から並び替え**
+⑨LIMIT ：⑧ の結果から取得する件数を指定する\*\*
 
 # UPDATE 文
 
 UPDATE 文はデータを書き換えるときに使う。
 
 ```sql
-UPDATE テーブル名<br>
-SET 列名=値<br>
-WHERE 列名=値<br>
+UPDATE テーブル名**
+SET 列名=値**
+WHERE 列名=値**
 ```
 
 - WHERE で行を指定しないと、全件更新される。
@@ -91,8 +91,8 @@ WHERE id=3;
 DELETE 文は行(レコード)を削除するときに使う。
 
 ```sql
-DELETE <br>
-FROM テーブル名<br>
+DELETE **
+FROM テーブル名**
 WHERE 列名=値;
 ```
 

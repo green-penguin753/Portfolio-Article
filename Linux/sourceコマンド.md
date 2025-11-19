@@ -63,4 +63,4 @@ $ echo $VAR
 - https://eng-entrance.com/linux-command-source
 - https://qiita.com/YumaInaura/items/00437e6ab14d96adb71f
 - https://eng-entrance.com/linux-command-source#source-3
-- サブシェルhttps://qiita.com/ko1nksm/items/19d300c4cb812b0fde1e
+- [サブシェル](https://qiita.com/ko1nksm/items/19d300c4cb812b0fde1e)

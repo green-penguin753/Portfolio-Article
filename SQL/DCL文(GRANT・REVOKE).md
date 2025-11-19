@@ -9,11 +9,11 @@ DCL 文(データ制御言語)とは、
 
 ☀︎GRANT」「REVOKE」で設定できる主な権限 ☀︎
 
-・SELECT・INSERT・UPDATE・DELETE の権限<br>
-・CREATE：データベース、テーブルを作成する権限<br>
-・EXECUTE：関数やストアドプロシージャなどの使用を許可する権限<br>
-・ALL PRIVILEGES：指定したスコープで付与できるすべての権限をまとめて許可する権限<br>
-・USAGE：権限がないことを指す。<br>
+・SELECT・INSERT・UPDATE・DELETE の権限
+・CREATE：データベース、テーブルを作成する権限
+・EXECUTE：関数やストアドプロシージャなどの使用を許可する権限
+・ALL PRIVILEGES：指定したスコープで付与できるすべての権限をまとめて許可する権限
+・USAGE：権限がないことを指す。
 ☀︎ 割り当てられている権限を確認するには SHOW GRANTS を使う。
 
 - 複数のロールやユーザーにまとめて設定するには、カンマで区切って指定する。

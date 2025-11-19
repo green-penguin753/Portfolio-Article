@@ -1,7 +1,7 @@
 # 【Git】git diff コマンド
 
-Gitのディフに関するコマンドをまとめてみました。<br>
-git diff コマンドは指定した二つのファイルを比較してその違い(差分)を表示するコマンドです。<br> +マーク...追加された行<br> -マーク...削除された行
+Git のディフに関するコマンドをまとめてみました。
+git diff コマンドは指定した二つのファイルを比較してその違い(差分)を表示するコマンドです。 +マーク...追加された行 -マーク...削除された行
 
 ---
 
@@ -9,54 +9,48 @@ git diff コマンドは指定した二つのファイルを比較してその�
 
 ### ワークツリーの差分
 
-<div style="border: 2px solid #ccc; padding: 10px; box-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
-git diff
-</div>
-ワークツリーとステージングエリアの差分を表示する。<br>
--wオプションをつけると空白や改行の変化を無視して表示する。
+`git diff`
+
+ワークツリーとステージングエリアの差分を表示する。
+-w オプションをつけると空白や改行の変化を無視して表示する。
 
 ### HEAD との差分
 
-<div style="border: 2px solid #ccc; padding: 10px; box-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
-git diff HEAD
-</div>
+`git diff HEAD`
+
 ワークツリーと現在ブランチの最新コミットとの変更内容を表示する。
 
 ### ステージングエリアの差分
 
-<div style="border: 2px solid #ccc; padding: 10px; box-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
-git diff --cached
-</div>
-ステージングエリアとHEADの差分を表示する。
+`git diff --cached`
+
+ステージングエリアと HEAD の差分を表示する。
 
 ### 指定したファイルの差分
 
-<div style="border: 2px solid #ccc; padding: 10px; box-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
-git diff <ファイル名>
-</div>
+`git diff <ファイル名>`
+
 指定したファイルの変更内容を表示する。
 
 ### コミット間の差分
 
-<div style="border: 2px solid #ccc; padding: 10px; box-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
-git diff <コミットID> <コミットID>
-</div>
-指定した2つのコミット間の変更内容を表示する。<br>
+`git diff <コミットID> <コミットID>`
+
+指定した 2 つのコミット間の変更内容を表示する。
 ブランチ間でも使える。
 
 ## 2.表示
 
 ### ファイル一覧表示
 
-<div style="border: 2px solid #ccc; padding: 10px; box-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
-git diff --name-only
-</div>
+`git diff --name-only`
+
 差分のあるファイルの一覧を表示する。
 
 ---
 
 ## 参考にしたサイト
 
-- [https://www.r-staffing.co.jp/engineer/entry/20200228_1]
-- [https://qiita.com/kome1996/items/f6fb0671b633711fbbc3]
-- [https://qiita.com/mamao/items/2e103c3fba9d1b058961]
+- https://www.r-staffing.co.jp/engineer/entry/20200228_1
+- https://qiita.com/kome1996/items/f6fb0671b633711fbbc3
+- https://qiita.com/mamao/items/2e103c3fba9d1b058961

@@ -27,24 +27,24 @@ CREATE TABLE customers (
 
 ☀︎ データの詳細設定 ☀︎
 
-・<b>デフォルト値</b><br>
-テーブル作成で列にデフォルト値を設定しておくと、 <br>
-INSERT 文でその列の値を省略したときは自動的にその値が入る。<br>
-デフォルト値を設定していないときは、NULL が入る。<br>
+・**デフォルト値**
+テーブル作成で列にデフォルト値を設定しておくと、 
+INSERT 文でその列の値を省略したときは自動的にその値が入る。
+デフォルト値を設定していないときは、NULL が入る。
 
-・<b>NOT NULL </b>(非 NULL 制約)<br>
-「NOT NULL」・・・NULL を入力できない<br>
-「NULL」・・・NULL も入力できる<br>
+・**NOT NULL **(非 NULL 制約)
+「NOT NULL」・・・NULL を入力できない
+「NULL」・・・NULL も入力できる
 
-・<b>UNIQUE</b>(一意性制約)<br>
-そのカラムには同じ値を重複して登録できない。<br>
-・<b>PRIMARY KEY</b>(主キー制約) <br>
-行を一意に識別するための列に設定する。<br>  
- PRIMARY KEY を設定することで、自動的に UNIQUE と NOT NULL の制約が付く。<br>
+・**UNIQUE**(一意性制約)
+そのカラムには同じ値を重複して登録できない。
+・**PRIMARY KEY**(主キー制約) 
+行を一意に識別するための列に設定する。  
+ PRIMARY KEY を設定することで、自動的に UNIQUE と NOT NULL の制約が付く。
 
-・<b>AUTO_INCREMENT</b><br>
-自動採番 <br>
-その行の最大値＋ 1 を自動的にセットする。<br>
+・**AUTO_INCREMENT**
+自動採番 
+その行の最大値＋ 1 を自動的にセットする。
 
 # 削除(DROP)
 

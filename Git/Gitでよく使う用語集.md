@@ -18,46 +18,46 @@ Git とは、ファイルの分散型バージョン管理システムの一つ�
 
 #### リポジトリ(repository)
 
-ファイルや変更履歴を保存しておく保管場所のこと。<br>
+ファイルや変更履歴を保存しておく保管場所のこと。
 リモートリポジトリとローカルリポジトリの 2 種類がある。
-・リモートリポジトリは、ネットワーク上に存在し、ファイルや変更履歴を共有する際に使う。<br>・ローカルリポジトリは、自分のコンピュータ上に存在し自分専用のリポジトリ。ここで作業を行う。
+・リモートリポジトリは、ネットワーク上に存在し、ファイルや変更履歴を共有する際に使う。・ローカルリポジトリは、自分のコンピュータ上に存在し自分専用のリポジトリ。ここで作業を行う。
 
 #### ブランチ(branch)
 
-日本語で枝、分岐という意味。<br>
-開発の本流のブランチから分岐させることにより、<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">他のブランチに影響を与えず開発を行える機能</span>のこと。複数人が同時並行で作業できる。git branch コマンドによって実行される。
+日本語で枝、分岐という意味。
+開発の本流のブランチから分岐させることにより、他のブランチに影響を与えず開発を行える機能のこと。複数人が同時並行で作業できる。git branch コマンドによって実行される。
 本流のブランチは master ブランチと呼ばれ、プログラムの修正や機能の追加を行う際は、ブランチを追加しそれぞれブランチで作業をする。作業後は他のブランチに統合(merge）し、一つのブランチにまとめ直すことができる。
-・統合ブランチとは、トピックブランチの分岐元として使用する本流のブランチ。通常、master ブランチを統合ブランチとして使用する。<br>・トピックブランチとは、作業を行うために追加したブランチのこと。通常、統合ブランチから分岐する形で作成する。
+・統合ブランチとは、トピックブランチの分岐元として使用する本流のブランチ。通常、master ブランチを統合ブランチとして使用する。・トピックブランチとは、作業を行うために追加したブランチのこと。通常、統合ブランチから分岐する形で作成する。
 
-<div style="height: 12px;"><span style="margin-left: 8px; padding: 6px 10px; background:#FBB161 ; color: #ffffff; font-weight: bold; border-radius: 5px;">☀︎その他の用語☀︎</span></div>
-<div style="border: 2px solid#FBB161 ; padding: 25px 12px 10px; font-size: 1em; border-radius: 5px;">
-・「ブランチを切る」...ブランチを分岐・追加すること。</div>
+☀︎ その他の用語 ☀︎
+
+・「ブランチを切る」...ブランチを分岐・追加すること。
 
 #### ステージング(staging)
 
-ローカルリポジトリに<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">コミットする前に、変更したファイルを選択して準備する作業</span>のこと。<br>
+ローカルリポジトリにコミットする前に、変更したファイルを選択して準備する作業のこと。
 git add コマンドによって実行される。別名コミット予定。
 ワークツリーで作業したファイルをステージングして、その後ローカルリポジトリにコミットする。
 
 - コミットしたい特定の変更だけインデックスに追加できる。（一つのファイルの中の特定の行だけをステージングすることもできる。）
 - コミット前の最終確認や、システムやソフトウェアのテストや検証を行うためにも使える。
 
-<div style="height: 12px;"><span style="margin-left: 8px; padding: 6px 10px; background:#FBB161 ; color: #ffffff; font-weight: bold; border-radius: 5px;">☀︎その他の用語☀︎</span></div>
-<div style="border: 2px solid#FBB161 ; padding: 25px 12px 10px; font-size: 1em; border-radius: 5px;">・ワークツリー(working tree)...作業中のファイルやフォルダのこと。別名作業ディレクトリ。<br>
-・インデックス（index）...コミットするためのファイルを登録するスペースのこと。別名ステージングエリア</div>
+☀︎ その他の用語 ☀︎
+・ワークツリー(working tree)...作業中のファイルやフォルダのこと。別名作業ディレクトリ。
+・インデックス（index）...コミットするためのファイルを登録するスペースのこと。別名ステージングエリア
 
 #### コミット(commit)
 
-新規作成したファイルや編集ファイルを<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">ローカルディレクトリに保存</span>すること。実行するとファイルの編集内容・日時・作業者・コミットメッセージを記録したファイルが保存される。
+新規作成したファイルや編集ファイルをローカルディレクトリに保存すること。実行するとファイルの編集内容・日時・作業者・コミットメッセージを記録したファイルが保存される。
 git commit コマンドによって実行される。
 
-<div style="height: 12px;"><span style="margin-left: 8px; padding: 6px 10px; background:#FBB161 ; color: #ffffff; font-weight: bold; border-radius: 5px;">☀︎関連☀︎</span></div>
-<div style="border: 2px solid#FBB161 ; padding: 25px 12px 10px; font-size: 1em; border-radius: 5px;">git tag...コミットに対しタグをつけられるコマンド</div>
+☀︎ 関連 ☀︎
+git tag...コミットに対しタグをつけられるコマンド
 
 #### プッシュ(push)
 
-ローカルディレクトリから<span style="background: linear-gradient(transparent 60%, #ffff00 60%);">リモートディレクトリにアップロードし保存</span>すること。
-git push コマンドによって実行される。<br>
+ローカルディレクトリからリモートディレクトリにアップロードし保存すること。
+git push コマンドによって実行される。
 プッシュ前にプルを行い競合(コンフリクト)を解決してからプッシュが推奨される。
 
 #### プル(pull)
@@ -65,15 +65,12 @@ git push コマンドによって実行される。<br>
 リモートディレクトリからローカルディレクトリにダウンロードし反映させること。
 git pull コマンドによって実行される。
 
-<div style="height: 12px;"><span style="margin-left: 8px; padding: 6px 10px; background:#FBB161 ; color: #ffffff; font-weight: bold; border-radius: 5px;">
-☀︎その他の用語☀︎
-</span></div>
-<div style="border: 2px solid#FBB161 ; padding: 25px 12px 10px; font-size: 1em; border-radius: 5px;">
-・フェッチ(fetch)..リモートリポジトリの最新の履歴の取得のみ行う。<br>
-・マージ(merge)...ブランチを統合する<br>
-・クローン(clone)...リモートリポジトリをまるまる複製する。<br>
+☀︎ その他の用語 ☀︎
+
+・フェッチ(fetch)..リモートリポジトリの最新の履歴の取得のみ行う。
+・マージ(merge)...ブランチを統合する
+・クローン(clone)...リモートリポジトリをまるまる複製する。
 ・リベース(rebase)...ブランチを統合する。コミット履歴を上書きする。
-</div>
 
 #### チェックアウト(checkout)
 
